@@ -89,6 +89,7 @@ function loadListings(data){
         }
         let comboArray = []
         comboArray = comboArray.concat(job.languages);
+        comboArray = comboArray.concat(job.tools);
         comboArray.push(job.role);
         comboArray.push(job.level);
 
