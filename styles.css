@@ -32,6 +32,9 @@ body {
   border-radius: 8px;
 }
 .container #filterCategories #clearAllFilters {
+  display: flex;
+  position: absolute;
+  right: 0;
   border: none;
   margin-right: 30px;
   background-color: white;
@@ -45,6 +48,7 @@ body {
 }
 .container #filterCategories #filters {
   display: flex;
+  position: absolute;
   margin-left: 25px;
 }
 .container #filterCategories #filters .filter {
