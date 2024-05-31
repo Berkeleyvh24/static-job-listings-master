@@ -30,7 +30,7 @@ loadJSON( async function(json) {
     clearButton.addEventListener('click', (event) => {
         filters.innerHTML = '';
         filterSet.length = 0;
-        createHtmlElements()
+        createHtmlElements(jsonData)
     })
 
     filters.addEventListener('click', (event) => {
@@ -47,7 +47,7 @@ loadJSON( async function(json) {
             filterSet.splice(event.target.parentNode.id, 1)
             event.target.parentNode.remove()
         }
-        createHtmlElements()
+        createHtmlElements(jsonData)
     })
 
     buttonList.addEventListener('click', (event) => {
@@ -75,7 +75,8 @@ loadJSON( async function(json) {
             filter.appendChild(filterText)
             filter.appendChild(filterButton)
             filters.appendChild(filter)
-            createHtmlElements()
+
+            createHtmlElements(filteredJsonData)
         }
       })
 });
@@ -97,10 +98,14 @@ function loadListings(data){
     });
 }
 
-function createHtmlElements(){
+function createHtmlElements(data){
     let jobsDisplay = document.getElementById('jobListings')
     jobsDisplay.innerHTML = ''
-    filteredJsonData = loadListings(jsonData)
+    console.log(filteredJsonData)
+    console.log('--------------------------------')
+    filteredJsonData = loadListings(data)
+    console.log('+++++++++++++++++++++++')
+    console.log(filteredJsonData)
     for (const property in filteredJsonData) {
         addHtmlElement(property);
     }
